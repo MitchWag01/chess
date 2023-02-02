@@ -1,6 +1,3 @@
-import pygame.image
-
-
 class Piece(object):
     def __init__(self, team_n, original_x, original_y):
         self.team = team_n
@@ -30,10 +27,10 @@ class Piece(object):
 class Pawn(Piece):
     def __init__(self, team_n, original_x, original_y):
         super().__init__(team_n, original_x, original_y)
-        if self.team == "white":
-            self.picture = pygame.image.load("white_pawn.png")
-        else:
-            self.picture = pygame.image.load("black_pawn.png")
+        # if self.team == "white":
+        #     self.picture = pygame.image.load("white_pawn.png")
+        # else:
+        #     self.picture = pygame.image.load("black_pawn.png")
 
 
 class Bishop(Piece):
@@ -63,6 +60,7 @@ class Knight(Piece):
 class King(Piece):
     def __init__(self, team_n, original_x, original_y):
         super().__init__(team_n, original_x, original_y)
+
 
 class Empty(Piece):
     def __init__(self, team_n, original_x, original_y):

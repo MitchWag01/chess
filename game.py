@@ -5,47 +5,6 @@ from gamePiece import *
 # initailize the gameBoard
 # pygame.init()
 game = GameBoard()
-#
-# # chess game is 8 by 8
-# dimensions = 8
-#
-# # individual square size
-# square_size = 50
-#
-# screen = pygame.display.set_mode((dimensions * square_size, dimensions * square_size))
-#
-# pygame.display.set_caption("Mitchells ChessBoard")
-#
-# # Set the colors for the chessboard squares
-# white = (255, 255, 255)
-# black = (0, 0, 0)
-#
-# # store chess pieces on the board
-# game_board_pieces = game.get_board()
-#
-# # get all current pieces on the board
-# for pieces in game_board_pieces:
-#     screen.blit(pieces.get_picture, ())
-#
-# # Draw the chessboard
-# for row in range(dimensions):
-#     for col in range(dimensions):
-#         color = white if (row + col) % 2 == 0 else black
-#         pygame.draw.rect(screen, color, (col * square_size, row * square_size, square_size, square_size))
-#
-# # Update the display
-# pygame.display.flip()
-#
-# # Run the game loop
-# running = True
-# while running:
-#     for event in pygame.event.get():
-#         if event.type == pygame.QUIT:
-#             running = False
-#
-# # Quit Pygame
-# pygame.quit()
-
 
 
 bottom_label = "  0 1 2 3 4 5 6 7"
@@ -53,7 +12,10 @@ bottom_label = "  0 1 2 3 4 5 6 7"
 game.start_new_game()
 game.move_pawn(game.get_piece(0, 1), 0, 3)
 game.move_pawn(game.get_piece(1, 1), 0, 1)
-
+game.move_rooke(game.get_piece(0, 0), 0, 2)
+game.move_pawn(game.get_piece(0, 6), 0, 4)
+game.move_rooke(game.get_piece(0, 7), 0, 5)
+game.move_rooke(game.get_piece(0, 5), 4, 5)
 
 
 
