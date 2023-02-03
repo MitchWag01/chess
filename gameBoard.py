@@ -216,14 +216,15 @@ class GameBoard(object):
 
         if new_x != x and new_y == y:
             # checking if there is a piece in the way of the rooke preventing move --> x direction
-            for j in range(abs(new_x - x) - 1):
+            for j in range(1, abs(new_x - x) - 1):
 
                 # checking positive x direction moves
                 if new_x > x:
 
                     # if there is a piece in the way return False
+                    print(self.board[y][x + j])
                     if self.board[y][x + j] is not Piece:
-                        print("Error Cannot move with piece in the way")
+                        print("Error Cannot move with piece in the way 1")
                         return False
 
                 # checking negative x direction
@@ -231,20 +232,20 @@ class GameBoard(object):
 
                     # if there is a piece in the way return false
                     if self.board[y][x - j] is not Piece:
-                        print("Error Cannot move with piece in the way")
+                        print("Error Cannot move with piece in the way 2")
                         return False
 
         elif new_y != y and new_x == x:
 
             # checking if there is a piece in the way of the rooke preventing move --> y direction
-            for j in range(abs(new_y - y) - 2):
+            for j in range(1, abs(new_y - y) - 1):
 
                 # checking positive y direction moves
                 if new_y > y:
 
                     # if there is a piece in the way return False
                     if self.board[y][y + j] is not Piece:
-                        print("Error Cannot move with piece in the way")
+                        print("Error Cannot move with piece in the way 3")
                         return False
 
                 # checking negative y direction
@@ -252,7 +253,7 @@ class GameBoard(object):
 
                     # if there is a piece in the way return false
                     if self.board[y][y - j] is not Piece:
-                        print("Error Cannot move with piece in the way")
+                        print("Error Cannot move with piece in the way 4")
                         return False
         else:
             print("Unexpected Position Error")

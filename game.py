@@ -17,6 +17,8 @@ game.move_pawn(game.get_piece(0, 6), 0, 4)
 game.move_rooke(game.get_piece(0, 7), 0, 5)
 game.move_rooke(game.get_piece(0, 5), 4, 5)
 
+game.move_rooke(game.get_piece(0, 2), 3, 2)
+
 
 
 
