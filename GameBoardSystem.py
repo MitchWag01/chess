@@ -6,25 +6,18 @@ class GameBoard(object):
     """
     """
     def __init__(self):
-        # self.white_team = Team()
-        # self.black_team = Team()
+
         self.board = [[Piece, Piece, Piece, Piece, Piece, Piece, Piece, Piece], [Piece, Piece, Piece, Piece, Piece, Piece, Piece, Piece], [Piece, Piece, Piece, Piece, Piece, Piece, Piece, Piece],
                       [Piece, Piece, Piece, Piece, Piece, Piece, Piece, Piece], [Piece, Piece, Piece, Piece, Piece, Piece, Piece, Piece], [Piece, Piece, Piece, Piece, Piece, Piece, Piece, Piece],
                       [Piece, Piece, Piece, Piece, Piece, Piece, Piece, Piece], [Piece, Piece, Piece, Piece, Piece, Piece, Piece, Piece]]
 
-    # def get_white_team(self):
-    #     return self.white_team
-    #
-    # def get_black_team(self):
-    #     return self.black_team
-    #
-    # def black_lose(self):
-    #     return self.black_team.get_king() == 0
-    #
-    # def white_lose(self):
-    #     return self.white_team.get_king() == 0
-
     def start_new_game(self):
+        """
+        Purpose:
+            Resets the game board positions to their original condition
+        Return:
+            None
+        """
         # setting all white pieces to their original position excluding pawns
         self.board[0][0] = Rooke("white", 0, 0)
         self.board[0][1] = Knight("white", 1, 0)
@@ -64,9 +57,6 @@ class GameBoard(object):
         :parameter
             x - x index on board
             y - y index on board
-
-
-        TODO -- when board is complete will likely need to change from index value to the board location
         """
         return self.board[y][x]
 
@@ -88,10 +78,6 @@ class GameBoard(object):
         """
         Purpose:
             Gets Gameboard object
-        PreCondition:
-            None
-        PostCondition
-            None
         Return
             GameBoard Type - current state of the board
         """
@@ -99,9 +85,12 @@ class GameBoard(object):
 
     def move_pawn(self, pawn, new_x, new_y):
         """
+        Purpose:
+            Moves a pawn type to a new location on the board
         """
         x = pawn.get_x()
         y = pawn.get_y()
+
         # make sure that white pawns only move forward and black pawns only move backwards
         if pawn.get_team() == "white":
             if new_y <= y or new_y > y + 2:
@@ -222,7 +211,6 @@ class GameBoard(object):
                 if new_x > x:
 
                     # if there is a piece in the way return False
-                    print(self.board[y][x + j])
                     if self.board[y][x + j] is not Piece:
                         print("Error Cannot move with piece in the way 1")
                         return False
@@ -244,7 +232,7 @@ class GameBoard(object):
                 if new_y > y:
 
                     # if there is a piece in the way return False
-                    if self.board[y][y + j] is not Piece:
+                    if self.board[y + j][x] is not Piece:
                         print("Error Cannot move with piece in the way 3")
                         return False
 
@@ -252,7 +240,7 @@ class GameBoard(object):
                 if new_y < y:
 
                     # if there is a piece in the way return false
-                    if self.board[y][y - j] is not Piece:
+                    if self.board[y][x - j] is not Piece:
                         print("Error Cannot move with piece in the way 4")
                         return False
         else:

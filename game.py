@@ -1,5 +1,5 @@
 # import pygame
-from gameBoard import GameBoard
+from GameBoardSystem import GameBoard
 from gamePiece import *
 
 # initailize the gameBoard
@@ -18,6 +18,11 @@ game.move_rooke(game.get_piece(0, 7), 0, 5)
 game.move_rooke(game.get_piece(0, 5), 4, 5)
 
 game.move_rooke(game.get_piece(0, 2), 3, 2)
+
+game.move_rooke(game.get_piece(4, 5), 4, 1)
+game.move_rooke(game.get_piece(4, 1), 5, 1)
+game.move_rooke(game.get_piece(3, 2), 3, 6)
+
 
 
 
