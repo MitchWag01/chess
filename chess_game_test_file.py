@@ -2,30 +2,24 @@
 from GameBoardSystem import GameBoard
 from gamePiece import *
 
-# initailize the gameBoard
+# initialize the gameBoard
 # pygame.init()
 game = GameBoard()
 
-
 bottom_label = "  0 1 2 3 4 5 6 7"
 
-game.start_new_game()
-game.move_pawn(game.get_piece(0, 1), 0, 3)
-game.move_pawn(game.get_piece(1, 1), 0, 1)
-game.move_rooke(game.get_piece(0, 0), 0, 2)
-game.move_pawn(game.get_piece(0, 6), 0, 4)
-game.move_rooke(game.get_piece(0, 7), 0, 5)
-game.move_rooke(game.get_piece(0, 5), 4, 5)
-
-game.move_rooke(game.get_piece(0, 2), 3, 2)
-
-game.move_rooke(game.get_piece(4, 5), 4, 1)
-game.move_rooke(game.get_piece(4, 1), 5, 1)
-game.move_rooke(game.get_piece(3, 2), 3, 6)
-
-
-
-
+# game.move_pawn(game.get_piece(0, 1), 0, 3)
+# game.move_pawn(game.get_piece(1, 1), 0, 1)
+# game.move_rook(game.get_piece(0, 0), 0, 2)
+# game.move_pawn(game.get_piece(0, 6), 0, 4)
+# game.move_rook(game.get_piece(0, 7), 0, 5)
+# game.move_rook(game.get_piece(0, 5), 4, 5)
+# #
+# game.move_rook(game.get_piece(0, 2), 3, 2)
+#
+# game.move_rook(game.get_piece(4, 5), 4, 1)
+# game.move_rook(game.get_piece(4, 1), 5, 1)
+# game.move_rook(game.get_piece(3, 2), 3, 1)
 
 
 count = 0
