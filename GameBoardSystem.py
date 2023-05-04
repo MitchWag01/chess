@@ -119,6 +119,39 @@ class GameBoard:
         self.__board[y][x] = EmptySpace()
         return True
 
+    def is_done(self):
+        # checking if white lost
+        found_white = False
+        for rows in self.__board:
+            for pieces in rows:
+                if pieces.get_team() == "white" and type(pieces) == King:
+                    found_white = True
+                    break
+            if found_white:
+                break
+
+        found_black = False
+        for rows in self.__board:
+            for pieces in rows:
+                if pieces.get_team() == "black" and type(pieces) == King:
+                    found_black = True
+                    break
+            if found_black:
+                break
+
+        if found_white and found_black:
+            return False, 0
+        elif found_white:
+            return True, 1
+        else:
+            return True, 2
+
+
+
+
+
+        # checking if black lost
+
     # def move_rook(self, rook, new_x, new_y):
     #     """
     #     Purpose:
