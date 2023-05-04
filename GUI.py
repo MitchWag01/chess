@@ -57,12 +57,6 @@ class ChessGUI:
         self._chess_game_root.mainloop()
 
     def initialize_board(self):
-        # Load background image
-        bg_image = tk.PhotoImage(file="Jesse.png")
-
-        # Create background image in canvas
-        self._chess_game_canvas.create_image(0, 0, anchor=tk.NW, image=bg_image)
-
         # Load chess piece images
         for color in ["white", "black"]:
             for piece_type in ["king", "queen", "rook", "bishop", "knight", "pawn"]:
